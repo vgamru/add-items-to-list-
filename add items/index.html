@@ -13,7 +13,7 @@
 <body>
   <form id="myform">
     <h2> My List</h2>
-    <input type="text" id="myinput" class="myinput" autocomplete="off">
+    <input type="text" id="myinput" class="myinput" autocomplete="off" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
     <button class="addBtn">Add</button>
     <div>Things to do...</div>
     <div id="mylist"></div>
