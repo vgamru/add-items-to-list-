@@ -1,19 +1,15 @@
-let myform = document.getElementById("myform")
-let mytext = document.getElementById("mytext")
-let mylist = document.getElementById("mylist")
+const myform = document.getElementById("myform")
 
-myform.addEventListener("submit",displayText )
-
-function displayText(data){
+myform.addEventListener("submit", (data) => {
   data.preventDefault()
-  // console.log(mytext.value)
-  createlist(mytext.value)
-  mytext.value=""
- 
-}
+  const myinput = document.getElementById("myinput")
+  const gotinput = myinput.value
 
-createlist=(d)=>{
-  let mytemplate = `<li>${d}</li>`
-  mylist.insertAdjacentHTML("afterbegin",mytemplate)
-  //afterbegin, beforeend, beforebegin, afterend
-}
+  const para = document.createElement("p")
+  const content = document.createTextNode(gotinput)
+  para.appendChild(content)
+
+  const mylist = document.getElementById("mylist")
+  mylist.appendChild(para)
+})
+
